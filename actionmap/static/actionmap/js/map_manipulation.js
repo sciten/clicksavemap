@@ -25,7 +25,8 @@ function placeAddressTextUnder(address_details) {
 
 
 // place the marker on the map
-function placeGoogleMarker(location, details = null) {
+function placeGoogleMarker(location, details) {
+    details = details || 0;
     var marker = new google.maps.Marker({
         position: location,
         map: map
@@ -42,7 +43,7 @@ function placeGoogleMarker(location, details = null) {
 // this is ASYNC
 // we will save only AFTER we receive a response from google
 function processNewPosition(latLng) {
-    let address;
+    var address;
 
     geocoder.geocode({
         latLng: latLng

@@ -19,9 +19,11 @@ function getCookie(cname) {
 
 // used to place markers from the database (used as an interface between the database and then map api)
 // the lat and lng are parameteres received in JSON
-function placeOurMarker(lat, lng, address_details = null) {
+function placeOurMarker(lat, lng, address_details) {
+    address_details = address_details|| 0;
+
     // create google friendly object for location
-    let location = { lat: parseFloat(lat), lng: parseFloat(lng) };
+    var location = { lat: parseFloat(lat), lng: parseFloat(lng) };
 
     return placeGoogleMarker(location, address_details);
 }
