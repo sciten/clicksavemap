@@ -3,7 +3,7 @@ from ..models import Address
 class AddressAdder(object):
     def __init__(self, lat, lng, address):
         # make sure we have the lat and lng
-        if lat is not None and lng is not None:
+        if isinstance(lat, float) and isinstance(lng, float):
             self.lat = lat
             self.lng = lng
             self.address = address
